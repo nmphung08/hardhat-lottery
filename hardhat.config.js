@@ -9,6 +9,7 @@ require("dotenv").config()
 
 const PRIVATE_KEY = process.env.PRIVATE_KEY || ""
 const GOERLI_RPC_URL = process.env.GOERLI_RPC_URL || ""
+const MUMBAI_RPC_URL = process.env.MUMBAI_RPC_URL || ""
 const ETHERSCAN_API_KEY = process.env.ETHERSCAN_API_KEY || ""
 const COINMARKETCAP_API_KEY = process.env.COINMARKETCAP_API_KEY || ""
 
@@ -28,6 +29,12 @@ module.exports = {
       blockConfirmations: 6,
       accounts: [PRIVATE_KEY],
       url: GOERLI_RPC_URL
+    },
+    "mumbai": {
+      chainId: 80001,
+      blockConfirmations: 6,
+      accounts: [PRIVATE_KEY],
+      url: MUMBAI_RPC_URL
     }
   },
 

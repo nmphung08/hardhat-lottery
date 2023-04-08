@@ -41,13 +41,13 @@ module.exports = async ({ getNamedAccounts, deployments }) => {
         confirmations: network.config.blockConfirmations || 1,
     })
 
-    const ETHERSCAN_API_KEY = process.env.ETHERSCAN_API_KEY || ""
+    // const ETHERSCAN_API_KEY = process.env.ETHERSCAN_API_KEY || ""
 
     
 
-    if (!developmentChains.includes(network.name) && ETHERSCAN_API_KEY) {
-        await verify(raffleContract.address, args)
-    } 
+    // if (!developmentChains.includes(network.name) && ETHERSCAN_API_KEY) {
+    //     await verify(raffleContract.address, args)
+    // } 
 
     if (vrfMock) {
         vrfMock.addConsumer(subId, raffleContract.address)
